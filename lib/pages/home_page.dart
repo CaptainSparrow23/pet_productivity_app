@@ -6,25 +6,31 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[800],
+      backgroundColor: Colors.lightBlue[300],
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue[800],
-        leading: IconButton(
-          icon: const Icon(Icons.menu, color: Colors.black),
-          onPressed: () {
-            // Handle menu button press
-          },
+        backgroundColor: Colors.lightBlue[300],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 20.0),
+          child: IconButton(
+            icon: const Icon(Icons.menu, color: Colors.white, size: 30),
+            onPressed: () {
+              // Handle menu button press
+            },
+          ),
         ),
         actions: [
-          IconButton(
-            icon: const Icon(Icons.search, color: Colors.black),
-            onPressed: () {
-              // Handle search button press
-            },
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0),
+            child: IconButton(
+              icon: Icon(Icons.favorite, color: Colors.white, size: 30),
+              onPressed: () {
+                // Handle favorite button press
+              },
+            ),
           ),
         ],
       ),
-      body: Container(
+      body: SizedBox(
         width: double.infinity, // This ensures the Column takes full width
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -34,19 +40,34 @@ class HomePage extends StatelessWidget {
             Text(
               'Spend time with your pet!',
               style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
+                fontFamily: "Bitcount",
+                fontSize: 19,
+                fontVariations: [FontVariation('wght', 500)],
                 color: Colors.white,
+                letterSpacing:
+                    0, // Negative values bring letters closer together
               ),
             ),
-            Container(height: 90), // Adjust this value to move circle up/down
+            Container(height: 70), // Adjust this value to move circle up/down
             Container(
               width: 300,
               height: 300,
               decoration: BoxDecoration(
                 color: Colors.white,
-                shape: BoxShape.circle,
-                border: Border.all(color: Colors.lightBlue[600]!, width: 17.0),
+                border: Border.all(color: Colors.lightBlue[100]!, width: 17.0),
+                borderRadius: BorderRadius.circular(200),
+              ),
+              child: Center(
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/images/brown_cat.png',
+                    width: 180,
+                    height: 180,
+                    filterQuality: FilterQuality.none,
+                    fit: BoxFit
+                        .cover, // This ensures the image fills the circle properly
+                  ),
+                ),
               ),
             ),
           ],
