@@ -1,8 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:pet_productivity_app/pages/settings_page.dart';
+import 'package:pet_productivity_app/pages/pets_page.dart';
 import '../utils/app_colors.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int _selectedIndex = 0;
+
+  final List _pages = [
+    const HomePage(),
+    const SettingsPage(),
+    const PetsPage(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -10,15 +25,7 @@ class HomePage extends StatelessWidget {
       backgroundColor: AppColors.deepBlue,
       appBar: AppBar(
         backgroundColor: AppColors.deepBlue,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 20.0),
-          child: IconButton(
-            icon: const Icon(Icons.menu, color: Colors.white, size: 30),
-            onPressed: () {
-              // Handle menu button press
-            },
-          ),
-        ),
+        iconTheme: IconThemeData(color: Colors.white), // Make drawer icon white
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
@@ -30,6 +37,51 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      drawer: SizedBox(
+        width: 200, // Adjust this value to change drawer width (default is around 304)
+        child: Drawer(
+          backgroundColor: AppColors.deepBlue,
+          child: Column(
+            children: <Widget>[
+              DrawerHeader(
+                decoration: BoxDecoration(color: AppColors.lightGray),
+                child: null,
+              ),
+
+              ListTile(
+                leading: Icon(Icons.pets, color: Colors.white),
+                title: Text(
+                  'My Pets',
+                  style: TextStyle(
+                    fontFamily: "Bitcount",
+                    fontSize: 18,
+                    fontVariations: [FontVariation('wght', 500)],
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/pets');
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.settings, color: Colors.white),
+                title: Text(
+                  'Settings',
+                  style: TextStyle(
+                    fontFamily: "Bitcount",
+                    fontSize: 18,
+                    fontVariations: [FontVariation('wght', 500)],
+                    color: Colors.white,
+                  ),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, '/settings');
+                },
+              ),
+            ],
+          ),
+        ),
       ),
       body: SizedBox(
         width: double.infinity, // This ensures the Column takes full width
@@ -50,14 +102,14 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(height: 70), // Adjust this value to move circle up/down
-            pet_window(),
+            petWindow(),
           ],
         ),
       ),
     );
   }
 
-  Container pet_window() {
+  Container petWindow() {
     return Container(
       width: 300,
       height: 300,
