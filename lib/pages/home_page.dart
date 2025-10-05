@@ -22,9 +22,9 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.tealBlue,
+      backgroundColor: AppColors.warmBeige,
       appBar: AppBar(
-        backgroundColor: AppColors.tealBlue,
+        backgroundColor: AppColors.warmBeige,
         iconTheme: IconThemeData(color: Colors.white), // Make drawer icon white
         actions: [
           Padding(
@@ -42,11 +42,11 @@ class _HomePageState extends State<HomePage> {
         width:
             220, // Adjust this value to change drawer width (default is around 304)
         child: Drawer(
-          backgroundColor: AppColors.tealBlue,
+          backgroundColor: AppColors.warmBeige,
           child: Column(
             children: <Widget>[
               DrawerHeader(
-                decoration: BoxDecoration(color: AppColors.warmBeige),
+                decoration: BoxDecoration(color: Colors.white),
                 child: null,
               ),
 
@@ -92,7 +92,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             const SizedBox(height: 100), // Add space above the text
             Text(
-              'Spend time with your pet!',
+              'Spend time with your pet !',
               style: TextStyle(
                 fontFamily: "Bitcount",
                 fontSize: 19,
@@ -116,19 +116,16 @@ class _HomePageState extends State<HomePage> {
       height: 300,
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: AppColors.warmBeige, width: 17.0),
+        border: Border.all(color: AppColors.lightBeige, width: 17.0),
         borderRadius: BorderRadius.circular(200),
       ),
       child: Center(
-        child: ClipOval(
-          child: Image.asset(
-            'assets/images/brown_cat.png',
-            width: 180,
-            height: 180,
-            filterQuality: FilterQuality.none,
-            fit: BoxFit
-                .cover, // This ensures the image fills the circle properly
-          ),
+        child: Image.asset(
+          'assets/images/pink_cat.png',
+          width: 230,
+          height: 230,
+          filterQuality: FilterQuality.none,
+          fit: BoxFit.contain,
         ),
       ),
     );

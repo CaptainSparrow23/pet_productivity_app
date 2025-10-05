@@ -7,9 +7,9 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.tealBlue,
+      backgroundColor: AppColors.warmBeige,
       appBar: AppBar(
-        backgroundColor: AppColors.tealBlue,
+        backgroundColor: AppColors.warmBeige,
         iconTheme: IconThemeData(color: Colors.white), // Make back arrow white
         title: const Text(
           'Settings',
