@@ -7,9 +7,9 @@ class PetsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.deepBlue,
+      backgroundColor: AppColors.tealBlue,
       appBar: AppBar(
-        backgroundColor: AppColors.deepBlue,
+        backgroundColor: AppColors.tealBlue,
         iconTheme: IconThemeData(color: Colors.white), // Make back arrow white
         title: const Text(
           'My Pets',

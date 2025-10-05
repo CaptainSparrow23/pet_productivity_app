@@ -22,15 +22,15 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.deepBlue,
+      backgroundColor: AppColors.tealBlue,
       appBar: AppBar(
-        backgroundColor: AppColors.deepBlue,
+        backgroundColor: AppColors.tealBlue,
         iconTheme: IconThemeData(color: Colors.white), // Make drawer icon white
         actions: [
           Padding(
             padding: const EdgeInsets.only(right: 20.0),
             child: IconButton(
-              icon: Icon(Icons.favorite, color: Colors.white, size: 30),
+              icon: Icon(Icons.favorite, color: Colors.white, size: 25),
               onPressed: () {
                 // Handle favorite button press
               },
@@ -39,13 +39,14 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       drawer: SizedBox(
-        width: 200, // Adjust this value to change drawer width (default is around 304)
+        width:
+            220, // Adjust this value to change drawer width (default is around 304)
         child: Drawer(
-          backgroundColor: AppColors.deepBlue,
+          backgroundColor: AppColors.tealBlue,
           child: Column(
             children: <Widget>[
               DrawerHeader(
-                decoration: BoxDecoration(color: AppColors.lightGray),
+                decoration: BoxDecoration(color: AppColors.warmBeige),
                 child: null,
               ),
 
@@ -115,7 +116,7 @@ class _HomePageState extends State<HomePage> {
       height: 300,
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: AppColors.lightGray, width: 17.0),
+        border: Border.all(color: AppColors.warmBeige, width: 17.0),
         borderRadius: BorderRadius.circular(200),
       ),
       child: Center(

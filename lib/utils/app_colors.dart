@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class AppColors {
-  static const Color mintGreen = Color(0xFFD1F4C8); // Light mint green
-  static const Color aquaMint = Color(0xFFA6F3E0); // Aqua mint
-  static const Color lightGray = Color(0xFFE7EAED); // Light gray
-  static const Color lavender = Color(0xFFCEC1E7); // Soft lavender
-  static const Color deepBlue = Color(0xFF3568C0); // Deep blue
+  static const Color darkSlate = Color(0xFF30323D); // Dark slate gray
+  static const Color dustyRose = Color(0xFFC96480); // Dusty rose pink
+  static const Color oliveGreen = Color(0xFF60712F); // Olive green
+  static const Color warmBeige = Color(0xFFF5D6BA); // Warm beige
+  static const Color tealBlue = Color(0xFF468C98); // Teal blue
 }
