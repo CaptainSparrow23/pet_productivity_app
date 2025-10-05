@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../utils/app_colors.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -6,9 +7,9 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlue[300],
+      backgroundColor: AppColors.deepBlue,
       appBar: AppBar(
-        backgroundColor: Colors.lightBlue[300],
+        backgroundColor: AppColors.deepBlue,
         leading: Padding(
           padding: const EdgeInsets.only(left: 20.0),
           child: IconButton(
@@ -49,28 +50,32 @@ class HomePage extends StatelessWidget {
               ),
             ),
             Container(height: 70), // Adjust this value to move circle up/down
-            Container(
-              width: 300,
-              height: 300,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.lightBlue[100]!, width: 17.0),
-                borderRadius: BorderRadius.circular(200),
-              ),
-              child: Center(
-                child: ClipOval(
-                  child: Image.asset(
-                    'assets/images/brown_cat.png',
-                    width: 180,
-                    height: 180,
-                    filterQuality: FilterQuality.none,
-                    fit: BoxFit
-                        .cover, // This ensures the image fills the circle properly
-                  ),
-                ),
-              ),
-            ),
+            pet_window(),
           ],
+        ),
+      ),
+    );
+  }
+
+  Container pet_window() {
+    return Container(
+      width: 300,
+      height: 300,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        border: Border.all(color: AppColors.lightGray, width: 17.0),
+        borderRadius: BorderRadius.circular(200),
+      ),
+      child: Center(
+        child: ClipOval(
+          child: Image.asset(
+            'assets/images/brown_cat.png',
+            width: 180,
+            height: 180,
+            filterQuality: FilterQuality.none,
+            fit: BoxFit
+                .cover, // This ensures the image fills the circle properly
+          ),
         ),
       ),
     );
