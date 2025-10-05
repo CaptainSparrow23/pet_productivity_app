@@ -62,6 +62,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
+                  Navigator.pop(context); // Close the drawer first
                   Navigator.pushNamed(context, '/pets');
                 },
               ),
@@ -77,6 +78,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
                 onTap: () {
+                  Navigator.pop(context); // Close the drawer first
                   Navigator.pushNamed(context, '/settings');
                 },
               ),
