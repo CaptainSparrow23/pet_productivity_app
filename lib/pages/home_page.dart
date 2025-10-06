@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pet_productivity_app/pages/settings_page.dart';
 import 'package:pet_productivity_app/pages/pets_page.dart';
 import '../utils/app_colors.dart';
+import '../models/timer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,14 +12,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int _selectedIndex = 0;
-
-  final List _pages = [
-    const HomePage(),
-    const SettingsPage(),
-    const PetsPage(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,17 +80,16 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       body: SizedBox(
-        width: double.infinity, // This ensures the Column takes full width
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 100), // Add space above the text
+            const SizedBox(height: 100), // Add space a bove the text
             Text(
               'Spend time with your pet !',
               style: TextStyle(
                 fontFamily: "Bitcount",
-                fontSize: 19,
+                fontSize: 22,
                 fontVariations: [FontVariation('wght', 500)],
                 color: Colors.white,
                 letterSpacing:
@@ -106,6 +98,8 @@ class _HomePageState extends State<HomePage> {
             ),
             Container(height: 70), // Adjust this value to move circle up/down
             petWindow(),
+            const SizedBox(height: 50), // Add space below the pet window
+            TimerScreen(),
           ],
         ),
       ),
